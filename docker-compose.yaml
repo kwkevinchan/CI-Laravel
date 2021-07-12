@@ -1,0 +1,28 @@
+version: "3.7"
+
+networks:
+  traefik_bridge:
+    external: true
+    name: traefik_bridge
+
+services:
+  demo:
+    build:
+      context: ./
+    environment:
+      - UPID=1000
+    labels:
+      - "traefik.enable=false"
+    networks:
+      - traefik_bridge
+
+  nginx:
+    build:
+      dockerfile: nginx.Dockerfile
+      context: ./
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.services.demo.loadbalancer.server.port=80"
+      - "traefik.http.routers.demo.rule=Host(`laravel.test`)"
+    networks:
+      - traefik_bridge
