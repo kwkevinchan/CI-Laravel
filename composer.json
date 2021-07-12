@@ -14,10 +14,10 @@
         "php": ">=5.3.7",
         "chriskacerguis/codeigniter-restserver": "^3.1",
         "illuminate/http": "^8.49",
-        "illuminate/filesystem": "^8.49",
         "symfony/var-dumper": "^5.3",
         "illuminate/validation": "^8.49",
-        "illuminate/translation": "^8.49"
+        "illuminate/translation": "^8.49",
+        "league/flysystem": "^2.1"
     },
     "suggest": {
         "paragonie/random_compat": "Provides better randomness in PHP 5.x"

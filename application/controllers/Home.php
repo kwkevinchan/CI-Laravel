@@ -15,6 +15,12 @@ class Home extends BaseController
         return $this->response($return, 200);
     }
 
+    public function dd_get()
+    {
+        $request = Request::capture();
+        dd($request);
+    }
+
     public function post_post()
     {
         $request = Request::capture();
