@@ -9,6 +9,11 @@ services:
   demo:
     build:
       context: ./
+    volumes: 
+      - ./:/var/www/app
+      - ./php.ini:/usr/local/etc/php/conf.d/php-docker.ini
+      - ./php-fpm.ini:/usr/local/etc/php-fpm.d/php-docker.conf
+
     environment:
       - UPID=1000
     labels:
